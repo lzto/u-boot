@@ -129,6 +129,19 @@
 #define CONFIG_SYS_SPI_U_BOOT_OFFS	0x8000
 #endif
 
+/* SPI Flash environment */
+#ifdef CONFIG_SPI_FLASH
+#undef CONFIG_ENV_SIZE
+#define CONFIG_ENV_SIZE                        0x8000
+#define CONFIG_ENV_SECT_SIZE           0x1000
+#ifdef CONFIG_ENV_IS_IN_MMC
+#undef CONFIG_ENV_IS_IN_MMC
+#endif
+#define CONFIG_ENV_IS_IN_SPI_FLASH
+#undef CONFIG_ENV_OFFSET
+#define CONFIG_ENV_OFFSET              0x000f8000
+#endif
+
 /* mmc config */
 #ifdef CONFIG_MMC
 #define CONFIG_MMC_SUNXI_SLOT		0

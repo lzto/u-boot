@@ -65,10 +65,11 @@
 
 	aliases {
 		ethernet1 = &rtl8189etv;
+        spi0 = &spi0;
 	};
 };
 
-/*
+
 &spi0 {
 	status = "okay";
 
@@ -76,7 +77,7 @@
 		compatible = "mxicy,mx25l12805d", "jedec,spi-nor";
 	};
 };
-*/
+
 
 &ohci1 {
 	/*
